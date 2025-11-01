@@ -1,0 +1,74 @@
+
+\documentclass[12pt,letterpaper]{article} % declare the document type and others.
+\usepackage{graphicx}  % for loading externel package
+
+\graphicspath{{images/},{pictures/}}  % graphicx package path declaration
+
+\title{My first LaTeX document} % maketitle command content start here,
+\author{Kerem Utku Gül\thanks{thanks}} % and continous here
+\date{November 2025} % and here.
+
+% until here we say preamble for document
+\begin{document}  % document starting here.
+\maketitle % if you want to use title, author and date in your document.
+First document. This is simple example, with no extra parameters or packages included.
+% This line here is a comment. It will not be typeset in a document.
+
+Some of the \textbf{greatest}  % bold 
+discoveries in \underline{science}  % underline
+were made by \textbf{\textit{accident}}.  % italic
+
+Some of the \emph{greatest}  % emphasize is similar to italics
+discoveries in \underline{\emph{science}}
+were made by \textbf{\textit{\emph{accident}}}. % but this behave different
+
+\begin{figure}[h]  % \begin{environment-name} is the core consept so in this sample I used figure.
+    \centering
+    \includegraphics[width=0.75\textwidth]{f1}
+    \caption{A nice plot}
+    \label{figure:mesh1}  % When I wanted to make a reference in the document, I used the \label command.
+\end{figure}
+
+As you can see figure \ref{figure:mesh1}, the function grows near the origin.  %\ref command replaced with the number corresonding in the label.
+this is on page \pageref{figure:mesh1}.
+
+\begin{itemize}  % making unoredered list
+    \item The individual entries are dedicated with a black dot,a so-called bullet.
+    \item The text in the entries may be of any lenght.
+\end{itemize}
+
+\begin{enumerate} % making ordered list
+    \item This is the first entry in our list.
+    \item The list numbers increase with each entry we added.
+\end{enumerate}
+
+In pyshics, the mass-energy equivalence is stated  
+by the equation $E=mc^2$ , discovered in 1905 by % inline math mode in used here
+Albert Einstein. % for using inline math mode we can use;\( ... \), $ ... $ or \begin{math} ... \end{math} pairs.
+
+\begin{math}
+E=mc^2
+\end{math} is typeset in a paragraph using 
+inline math mode---as is $E=mc^2$, and so too is \(E=mc^2\).
+
+The mass-energy equivalence is described by the famous equation
+\[ E=mc^2 \] discovered in 1905 by 
+Albert Einstein. %  for using display math mode we can use; \[ ... \], \begin{displaymath} ... \end{displaymath} or \begin{equation} ... \end{equation} pairs.
+
+In natural units ($c = 1$), the formula expresses the identity
+\begin{equation}
+E=m
+\end{equation}
+
+Subscripts in math mode are written as $a_b$ and superscripts are written as $a^b$. These can be combined and nested to write expressions such as
+
+\[ T^{i_1 i_2 \dots i_p}_{j_1 j_2 \dots j_q} = T(x^{i_1},\dots,x^{i_p},e_{j_1},\dots,e_{j_q}) \]
+
+We write integrals using $\int$ and fractions using $\frac{a}{b}$. Limits are placed on integrals using superscripts and subscripts:
+
+\[ \int_0^1 \frac{dx}{e^x} =  \frac{e-1}{e} \]
+
+Lower case Greek letters are written as $\omega$ $\delta$ etc. while upper case Greek letters are written as $\Omega$ $\Delta$.
+
+Mathematical operators are prefixed with a backslash as $\sin(\beta)$, $\cos(\alpha)$, $\log(x)$ etc.
+\end{document}
